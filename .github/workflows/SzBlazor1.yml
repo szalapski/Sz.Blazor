@@ -9,7 +9,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: Sz.Blazor.Web/published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
-  WORKING_DIRECTORY: Sz.Blazor
+  WORKING_DIRECTORY: Sz.Blazor.Web
 jobs:
   build:
     runs-on: ubuntu-latest
