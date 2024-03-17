@@ -32,3 +32,4 @@ Sz.Blazor provides a few ultra-simple utilities and components for Blazor.
 Run.bat executed in the root of the solution should automatically start with the right parameters.
 
 GitHub Action SzBlazor1 should be set up to automatically publish to https://szblazor1.azurewebsites.net/ on Azure.
+If visiting this demo site, it will take a few minutes to spin up, as it is hosted on a free tier.
