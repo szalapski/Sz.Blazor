@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - master
+    - azure-c
 env:
   AZURE_WEBAPP_NAME: SzBlazor1
   AZURE_WEBAPP_PACKAGE_PATH: Sz.Blazor/published
