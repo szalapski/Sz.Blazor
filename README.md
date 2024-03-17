@@ -26,3 +26,8 @@ Sz.Blazor provides a few ultra-simple utilities and components for Blazor.
   ### Wishlist
   
   [] Make inline transitions disappear better
+
+## Quickstart
+
+### Running locally
+Run.bat executed in the root of the solution should automatically start with the right parameters.

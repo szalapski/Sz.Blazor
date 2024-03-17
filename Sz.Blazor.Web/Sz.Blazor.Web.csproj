@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sz.Blazor.Client\Sz.Blazor.Client.csproj" />
+    <ProjectReference Include="..\Sz.Blazor\Sz.Blazor.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
   </ItemGroup>
 
