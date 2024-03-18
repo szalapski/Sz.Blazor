@@ -1,0 +1,69 @@
+﻿@using Sz.Blazor.Reveal
+@rendermode InteractiveAuto
+OS is browser: @OperatingSystem.IsBrowser();
+
+<h1><code>Sz.Blazor.Reveal</code> component examples</h1>
+@ShowExample1
+<button @onclick="() => {ToggleAll(); Console.WriteLine(ShowExample1);}">
+    @(ShowExample1 ? "Hide" : "Show")
+    </button>
+
+<h3><code>display: block</code>, <code>flex</code> elements</h3>
+
+<div class="two-columns-grid">
+    <div>
+        <div class="unaffected">Previous block.</div>
+        <Reveal When="ShowExample1" TransitionMilliseconds="500">
+            <div>Example</div>
+            <div>Example second element</div>
+        </Reveal>
+
+        <div class="unaffected">Subsequent block.</div>
+    </div>
+    <pre><code>
+            @blockExampleString
+    </code></pre>
+</div>
+
+<h3>Table header/data (cell) elements</h3>
+<table>
+    <tr>
+        <td>Column 1</td>
+        <Reveal When="ShowExample1" IsInline="@true">
+            <td>Column 2</td>
+        </Reveal>
+        <td>Column 3</td>
+    </tr>
+</table>
+
+<h3><code>display: inline</code> elements</h3>
+<span class="unaffected">Previous span.</span>
+<Reveal When="ShowExample1" IsInline="@true" TransitionMilliseconds="2000">
+    <span>Inline Example</span>
+    <span>
+        Example second element.
+    </span>
+</Reveal>
+<span class="unaffected">Subsequent span.</span>
+
+<h3>Long <code>display: inline</code> elements</h3>
+<span class="unaffected">Previous span.</span>
+<Reveal When="ShowExample1" IsInline="@true" >
+    <span>Inline Example</span>
+    <span>
+        Example second element that is really long and probably needs
+        to word-wrap eventually when the browser is narrow enough and the font big enough.
+    </span>
+</Reveal>
+<span class="unaffected">Subsequent span.</span>
+
+
+<h3><code>display: inline-block</code> elements</h3>
+<span class="unaffected">Previous span.</span>
+<Reveal When="ShowExample1" IsInline="@true">
+    <div style="display: inline-block">Inline Example</div>
+    <div style="display: inline-block">
+        Example second element.
+    </div>
+</Reveal>
+<span class="unaffected">Subsequent span.</span>

@@ -1,0 +1,24 @@
+﻿<div class="reveal @ShowCssClassName @InlineCssClassName"
+     style="transition-duration: @(TransitionMilliseconds)ms;">
+    <div class="reveal-content">@ChildContent</div>
+</div>
+
+@code
+{
+    [Parameter]
+    public bool When { get; set; } = true;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool IsInline { get; set; } = false;
+
+    [Parameter]
+    public int TransitionMilliseconds { get; set; } = 500;
+
+    private string? ShowCssClassName => When ? "reveal-show" : null;
+
+    private string? InlineCssClassName => IsInline ? "reveal-inline": null;
+}
+

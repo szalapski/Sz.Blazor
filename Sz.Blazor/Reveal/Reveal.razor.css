@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 1750ms ease-in-out, white-space 1750ms steps(1, end);
+    transition-duration: 500ms; /* overridden in razor inline */
+}
+
+    .reveal.reveal-inline {
+        display: inline-grid;
+        grid-template-columns: 0fr;
+        white-space: nowrap;
+        transition-property: grid-template-columns, font-size;
+        transition-timing-function: ease-in-out;
+        font-size: 0;
+    }
+    .reveal > .reveal-content {
+        overflow: hidden;
+    }
+    .reveal > .reveal-content *{
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+        .reveal.reveal-inline > .reveal-content {
+            display: inline;
+        }
+
+    .reveal.reveal-show {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        font-size: inherit;
+        overflow-x: inherit;
+        overflow-y: hidden;
+    }
+        .reveal.reveal-show > .reveal-content * {
+            white-space: normal;
+        }
