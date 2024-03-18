@@ -3,7 +3,6 @@ on:
   push:
     branches:
     - master
-    - revealer
 env:
   AZURE_WEBAPP_NAME: SzBlazor1
   AZURE_WEBAPP_PACKAGE_PATH: Sz.Blazor.Web/published
