@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sz.Blazor", "Sz.Blazor\Sz.Blazor.csproj", "{EBBCD378-3414-4210-B6FB-2FD0BC33A846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sz.Blazor.Web", "Sz.Blazor.Web\Sz.Blazor.Web.csproj", "{EBBCD378-3414-4210-B6FB-2FD0BC33A846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sz.Blazor.Client", "Sz.Blazor.Client\Sz.Blazor.Client.csproj", "{CE693F32-3E13-476A-AE26-B6CEA35F015A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sz.Blazor.Client", "Sz.Blazor.Client\Sz.Blazor.Client.csproj", "{CE693F32-3E13-476A-AE26-B6CEA35F015A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C1C2F99-A0FE-4493-92EE-2B59C5B49EF5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		run.bat = run.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sz.Blazor", "Sz.Blazor\Sz.Blazor.csproj", "{67FA4B4E-48F1-4D1C-8915-F0747122627F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,10 @@ Global
 		{CE693F32-3E13-476A-AE26-B6CEA35F015A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE693F32-3E13-476A-AE26-B6CEA35F015A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE693F32-3E13-476A-AE26-B6CEA35F015A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FA4B4E-48F1-4D1C-8915-F0747122627F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FA4B4E-48F1-4D1C-8915-F0747122627F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FA4B4E-48F1-4D1C-8915-F0747122627F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FA4B4E-48F1-4D1C-8915-F0747122627F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

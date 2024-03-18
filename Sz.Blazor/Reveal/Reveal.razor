@@ -1,0 +1,66 @@
+﻿<div class="reveal @ShowCssClassName @InlineCssClassName"
+     style="transition-duration: @(TransitionMilliseconds)ms;">
+    @if (RenderInDom)
+    {
+        <div class="reveal-content">@ChildContent</div>
+    }
+</div>
+
+@code
+{
+    /// <summary>
+    /// Whether to show the content.  When this becomes true, the content will be revealed via a transition anitmation.
+    /// When this becomes false, the content will be hidden via a transition animation.
+    /// </summary>
+    [Parameter]
+    public bool When { get; set; } = true;
+    private bool Show => When; // synonym for code readability below
+
+    /// <summary>
+    /// The content to be revealed.
+    /// </summary>
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    /// <summary>
+    /// Set to true when the content is in an inline or table-cell display. 
+    /// This is needed because the logic for transitioning the content in and out of view is different
+    /// for such elements, but there is no other way to detect this from inside this component.
+    /// </summary>
+    [Parameter]
+    public bool IsInline { get; set; } = false;
+
+    /// <summary>
+    /// The duration during which the content transitions in and out of view.
+    /// </summary>
+    [Parameter]
+    public int TransitionMilliseconds { get; set; } = 500;
+
+    /// <summary>
+    /// Whether to keep the rendered content in the DOM even when it is hidden.
+    /// </summary>
+    [Parameter]
+    public bool KeepRendered { get; set; } = false;
+
+    private CancellationTokenSource _cancellationTokenSource = new();
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Show)
+        {
+            _cancellationTokenSource.Cancel();
+            RenderInDom = true;
+        }
+        else
+        {
+            await Task.Delay(TransitionMilliseconds, _cancellationTokenSource.Token);
+            RenderInDom = KeepRendered;
+        }
+    }
+
+    private bool RenderInDom { get; set; }
+
+    private string? ShowCssClassName => Show ? "reveal-show" : null;
+
+    private string? InlineCssClassName => IsInline ? "reveal-inline" : null;
+}
+
