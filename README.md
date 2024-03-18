@@ -4,7 +4,10 @@ Sz.Blazor provides a few ultra-simple utilities and components for Blazor.
 
 ### Components
 
-- **Reveal** is a drop-in replacement for an `@if` block in a .razor file's markup section
+- **Reveal** is a drop-in replacement for an `@if` block in a .razor file's markup section;
+  It applies CSS transitions to hide and show its child content in a more usable fashion than
+  hiding or showing conent instantly via @if.
+
 
   #### Usage
   For any block-display elements that are conditionally shown in an @if block, such as:
