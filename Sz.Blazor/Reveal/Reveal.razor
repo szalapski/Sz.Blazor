@@ -14,7 +14,7 @@
     /// </summary>
     [Parameter]
     public bool When { get; set; } = true;
-    private bool Show => When;
+    private bool Show => When; // synonym for code readability below
 
     /// <summary>
     /// The content to be revealed.
@@ -37,7 +37,7 @@
     public int TransitionMilliseconds { get; set; } = 500;
 
     /// <summary>
-    /// Whether to keep the rendered content in the DOM after it's hidden.
+    /// Whether to keep the rendered content in the DOM even when it is hidden.
     /// </summary>
     [Parameter]
     public bool KeepRendered { get; set; } = false;
